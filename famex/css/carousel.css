@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
+@import url('href=https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Oswald&family=Roboto+Slab:wght@700;800&display=swap');
+@import url('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;800&display=swap" rel="stylesheet">');
+
+.contents {
+  width: 50%;
+  text-align: center;
+  padding: 0;
+  flex-direction: column; 
+  float:left;
+  display: flex;
+  justify-content: center;
+  margin: 10% 10%;
+}
+
+.contents:nth-child(2) {
+  display: block;
+  z-index: 99;
+}
+
+.contents .name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 0.8;
+  animation: showcontent 1s ease-in-out 1 forwards
+}
+
+.contents .des {
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.8;
+  margin: 20px 0;
+  animation: showcontent 1s ease-in-out 0.3s 1 forwards
+}
+
+.contents button {
+  border: none;
+  border-top: 5px ridge #7aaac5;
+  background-color: #0c1427;
+  color: white;
+  width: 400px;
+  height: 70px;
+  border-radius: 5px;
+  opacity: 0;
+  animation: showcontents 1s ease-in-out 0.6s 1 forwards;  
+  font-size: large
+}
+
+.contents img{
+  width: 60%;
+  height: 40%;
+}
+
+@keyframes showcontents {
+  from {
+    opacity: 0;
+    transform: translate(0,100px);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+
+.img1 img {
+  transform: scale(4); /* Ajusta el valor para el nivel de zoom inicial */
+  animation: zoom-animation 1s forwards;
+}
+.img2 img {
+  animation-delay: 40s;
+  transform: scale(4); /* Ajusta el valor para el nivel de zoom inicial */
+  animation: zoom-animation 1s forwards;
+}
+.img3 img {
+  animation-delay: 80s;
+  transform: scale(4); /* Ajusta el valor para el nivel de zoom inicial */
+  animation: zoom-animation 1s forwards;
+}
+
+@keyframes zoom-animation {
+  0% {
+    transform: scale(4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.info{
+    margin: 50px 0 80px
+}
+
+.nosotros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%
+}
+
+.sliderIm {
+  float: left;
+  object-fit: cover;
+  object-position: bottom;
+  width: 45%
+}
+.sliderIm img{
+  border-radius: 50px;
+  width: 100%;
+  height: 350px
+}
+.slider {
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.slider h5 {
+  color: #0c1427;
+  margin-top: 25px;
+}
+
+.slider h3 {
+  margin-top: 90px;
+  color:#0c1427;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.slider-content {
+  color: #0c1427;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: justify;
+}
+
+.slider-content.active {
+  opacity: 1;
+}
+
+.record {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  --opacidad-negro: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url("https://www.f-airmexico.com.mx/img/qsmex.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 900px;
+}
+
+.record h1 {
+  transform: translate(22%, -15%);
+  width: 70%;
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial, sans-serif';
+  justify-content: center;
+
+}
+.table{
+
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.table th {
+  color: white;
+  text-align: center;
+
+}
+
+.table td {
+  color: white;
+  text-align: center;
+}
+
+.texto{
+  width: 60%;
+  height: 400px;
+}
+
+.texto h1{
+  color: #086ba1;
+  transform: translate(35%, 115%);
+  text-align: center;
+}
+
+.propocito{
+  background-color: white;
+  transform: translate(35%, 35%);
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+  .info {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contents{
+    left: 50px;
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    color: #eee;
+    display: none;
+  }
+
+  .contents .name{
+    font-size: 30px;
+ 
+  }
+
+  .contents .des{
+
+    font-size: 10px;
+  }
+
+  .contents button {
+    width: 250px;
+  }
+  .info {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider {
+    width: 340px;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+
+  }
+
+  .sliderIm {
+    margin-top: 60px;
+    width: 10%;
+  }
+
+  .texto{
+    width: 80%;
+    height: 700px;
+  }
+
+  .texto h1{
+    color: #086ba1;
+    text-align: center;
+  }
+  
+  .propocito{
+    background-color: white;
+    padding: 5px;
+    text-align: justify;
+  }
+
+  .record{
+    margin-top: 30PX;
+  }
+}

@@ -1,0 +1,132 @@
+/* Contendor cristal */
+
+.glass {
+    background: linear-gradient(135def, rgba(255, 255, 255, 0.027) rgba(255, 255, 255, 0));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 #0000005e;
+    text-align: center;
+}
+
+/* Animación de lluvia de estrellas */
+
+.bg {
+    background-image: linear-gradient(to bottom, #1981a7, #114d72, #00205B);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: fanimado 15s infinite;
+}
+
+/* .bg {
+    background-color: #00205B;
+} */
+
+.star {
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: animate 3s linear infinite;
+}
+
+.star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+.star:nth-child(1) {
+    top: 0;
+    right: 1250px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.75s;
+}
+
+.star:nth-child(2) {
+    top: 0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 1.6s;
+    animation-duration: 1.6s;
+}
+
+.star:nth-child(3) {
+    top: 0;
+    right: 750px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.75s;
+}
+
+.star:nth-child(4) {
+    top: 0;
+    right: 500px;
+    left: initial;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+.star:nth-child(5) {
+    top: 0;
+    right: 250px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.75s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0vh);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-130vh);
+        opacity: 0;
+    }
+}
+
+/* Animación botón */
+
+.boton {
+    background-image: linear-gradient(135deg, #1981a7, #114d72, #00205B);
+    background-size: 500%;
+    animation: fanimado 3.5s infinite;
+}
+
+@keyframes fanimado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Label flotante selects */
+
+.coolinput label.text {
+    font-size: 0.80rem;
+    color: #000000;
+    position: relative;
+    top: 0.8rem;
+    margin: 0 0 0 10px;
+    padding: 0 4px;
+    background: #FFFFFF;
+    width: fit-content;
+}

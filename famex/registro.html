@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Registro y Acreditación | Formulario de Registro</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/logofamexcolores.ico">
+	<link rel="apple-touch-icon" href="img/logofamexcolores.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/logofamexcolores72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/logofamexcolores114x114.png">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<!-- MDB -->
+	<link rel="stylesheet" href="mdb5/css/mdb.min.css" />
+	<!-- Estilos -->
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Estilos Select2 -->
+	<link rel="stylesheet" href="libraries/select2/css/select2.min.css" />
+	<!-- intl-tel-input -->
+	<link rel="stylesheet" href="libraries/intl-tel-input/css/intlTelInput.css" />
+	<script type="text/javascript" src="libraries/intl-tel-input/js/intlTelInput.min.js">
+	</script>
+	<!-- SMTP -->
+	<script type="text/javascript" src="libraries/smtp.js">
+	</script>
+	<!-- PDF Lib -->
+	<script type="text/javascript" src="libraries/pdf-lib.min.js">
+	</script>
+	<!-- API Paypal -->
+	<script src="https://www.paypal.com/sdk/js?client-id=AZGcHgzD6ADixKnCpDOol7w0ah301FfZ5LGHsm4nVjEhZwhB2f3FncDmiAblQQp_N6ahAEIZyTKpBmuJ&currency=MXN">
+	</script>
+	<script src="js/paypalButtons.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js">
+	</script>
+
+</head>
+
+<body class="bg">
+
+	<!-- Lluvia de estrellas -->
+	<section>
+		<span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+    </section>
+
+    <!-- Formulario de registro -->
+    <div class="container px-3 py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-6 col-xl-6">
+                <div class="card" style="border-radius: 10px;">
+                    <div class="card-body px-3">
+
+                        <div class="text-center pb-4">
+                            <img src="img/logo.png" alt="FAMEX" width="39%" height="75%" />
+                        </div>
+
+                        <form id="myForm">
+
+                            <div>
+                                <div class="accordion accordion-flush mb-2" id="accordionPanelsStayOpenExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button fw-bold" type="button"
+                                                data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseOne"
+                                                aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"><i
+                                                    class="fas fa-user fa-sm me-2"></i>DATOS
+                                                PERSONALES
+                                            </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne">
+                                            <div class="accordion-body">
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-6 mb-4">
+                                                        <!-- Campo de nombre -->
+                                                        <div class="form-outline" id="grupo__nombre">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="nombre" id="nombre"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                autofocus required placeholder="John"
+                                                                pattern="^[a-zA-ZÀ-ÿ\u00F1\s]{1,50}$"
+                                                                oninput="this.value = this.value.replace(/[^a-zA-ZñÑÀ-ÿ\u00F1\s]/g, '')" />
+                                                            <label class="form-label"><b>Nombre <strong
+                                                                        class="text-danger">*</strong></b></label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-4">
+                                                        <!-- Campo de apellidos -->
+                                                        <div class="form-outline" id="grupo__apellidos">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="apellidos" id="apellidos"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                required placeholder="Doe"
+                                                                pattern="^[a-zA-ZÀ-ÿ\u00F1\s]{1,50}$"
+                                                                oninput="this.value = this.value.replace(/[^a-zA-ZñÑÀ-ÿ\u00F1\s]/g, '')" />
+                                                            <label class="form-label"><b>Apellidos
+                                                                    <strong class="text-danger">*</strong></b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row" id="grupo__email">
+
+                                                    <div class="col-md-12" id="divEmail">
+                                                        <!-- Campo de email -->
+                                                        <div class="form-outline mb-4">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="email" name="email" id="email"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                onpaste="return false" disabled required />
+                                                            <label class="form-label"><b>Email <strong
+                                                                        class="text-danger">*</strong></b></label>
+                                                            <div class="invalid-feedback"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 mb-4" id="divBtn" style="display: none">
+                                                        <!-- Botón correspondiente a la verificación email -->
+                                                        <button type="button"
+                                                            class="btn btn-block btn-lg text-white boton fw-bold"
+                                                            id="btnVeri" data-mdb-toggle="modal"
+                                                            data-mdb-target="#tokenModal">Validar</button>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Campo de confirmación de email -->
+                                                <div class="form-outline mb-4" id="grupo__conEmail">
+                                                    <i class="fas trailing fa-lg"></i>
+                                                    <input type="email" name="conEmail" id="conEmail"
+                                                        class="form-control form-icon-trailing form-control-lg"
+                                                        onpaste="return false" disabled required />
+                                                    <label class="form-label"><b>Confirmar Email <strong
+                                                                class="text-danger">*</strong></b></label>
+                                                    <div class="invalid-feedback py-3">Ambos correos deben ser
+                                                        iguales.</div>
+                                                </div>
+
+                                                <!-- Campo de email alternativo -->
+                                                <div class="form-outline" id="grupo__emailAlt">
+                                                    <i class="fas trailing fa-lg"></i>
+                                                    <input type="email" name="emailAlt" id="emailAlt"
+                                                        class="form-control form-icon-trailing form-control-lg" />
+                                                    <label class="form-label"><b>Email
+                                                            Alternativo</b></label>
+                                                    <div class="invalid-feedback py-3">Ingrese un correo diferente a los
+                                                        proporcionados.</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion accordion-flush mb-3" id="accordionPanelsStayOpenExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button fw-bold" type="button"
+                                                data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseTwo"
+                                                aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"><i
+                                                    class="fas fa-building fa-sm me-2"></i>DATOS
+                                                DE LA EMPRESA
+                                            </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne">
+                                            <div class="accordion-body">
+
+                                                <!-- Campo de nombre de la empresa -->
+                                                <div class="form-outline mb-4" id="grupo__nombreEmp">
+                                                    <i class="fas trailing fa-lg"></i>
+                                                    <input type="text" name="nombreEmp" id="nombreEmp"
+                                                        class="form-control form-icon-trailing form-control-lg" />
+                                                    <label class="form-label"><b>Nombre de la
+                                                            empresa</b></label>
+                                                </div>
+
+                                                <!-- Campo de nombre de página web -->
+                                                <div class="form-outline" id="grupo__paginaWeb">
+                                                    <i class="fas trailing fa-lg"></i>
+                                                    <input type="text" name="paginaWeb" id="paginaWeb"
+                                                        class="form-control form-icon-trailing form-control-lg"
+                                                        placeholder="f-airmexico.com.mx" />
+                                                    <label class="form-label"><b>Página Web</b></label>
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-12" id="divGiros">
+                                                        <!-- Campo de giro empresarial -->
+                                                        <div class="coolinput">
+                                                            <label for="input" id="lblGiro" class="text"><b>Giro
+                                                                    empresarial</b></label>
+                                                            <select name="giro" id="giro"
+                                                                onchange="mostrarOtroCampo('giro', 'grupo__otro', 'divGiros', 'otro', 'div1', 'lblGiro')">
+                                                                <option value="" selected disabled>Selecciona una opción
+                                                                </option>
+                                                                <option value="O.E.Ms." data-tokens="Option 1">O.E.Ms.
+                                                                </option>
+                                                                <option value="PROVEEDOR LOCAL DE BAJO COSTO"
+                                                                    data-tokens="Option 2">
+                                                                    PROVEEDOR LOCAL DE BAJO COSTO</option>
+                                                                <option value="DEFENSA" data-tokens="Option 3">DEFENSA
+                                                                </option>
+                                                                <option value="LOGÍSTICA" data-tokens="Option 4">
+                                                                    LOGÍSTICA
+                                                                </option>
+                                                                <option value="TIER 1" data-tokens="Option 5">TIER 1
+                                                                </option>
+                                                                <option value="EDUCACIÓN" data-tokens="Option 6">
+                                                                    EDUCACIÓN
+                                                                </option>
+                                                                <option value="MRO" data-tokens="Option 7">MRO</option>
+                                                                <option value="INVESTIGACIÓN Y DESARROLLO"
+                                                                    data-tokens="Option 8">
+                                                                    INVESTIGACIÓN Y DESARROLLO</option>
+                                                                <option value="TIER 2" data-tokens="Option 9">TIER 2
+                                                                </option>
+                                                                <option value="FUERZAS ARMADAS" data-tokens="Option 10">
+                                                                    FUERZAS
+                                                                    ARMADAS
+                                                                </option>
+                                                                <option value="UAVs" data-tokens="Option 11">UAVs
+                                                                </option>
+                                                                <option value="SECTOR AUTOMOTRIZ"
+                                                                    data-tokens="Option 12">
+                                                                    SECTOR
+                                                                    AUTOMOTRIZ</option>
+                                                                <option value="TIER 3" data-tokens="Option 13">TIER 3
+                                                                </option>
+                                                                <option value="GOBIERNO" data-tokens="Option 14">
+                                                                    GOBIERNO
+                                                                </option>
+                                                                <option value="COMBUSTIBLES Y LUBRICANTES"
+                                                                    data-tokens="Option 15">
+                                                                    COMBUSTIBLES Y LUBRICANTES</option>
+                                                                <option value="AVIACIÓN PRIVADA"
+                                                                    data-tokens="Option 16">
+                                                                    AVIACIÓN
+                                                                    PRIVADA</option>
+                                                                <option value="PROVEEDOR DE SERVICIOS"
+                                                                    data-tokens="Option 17">
+                                                                    PROVEEDOR
+                                                                    DE SERVICIOS</option>
+                                                                <option value="ESPACIAL" data-tokens="Option 18">
+                                                                    ESPACIAL
+                                                                </option>
+                                                                <option value="MEDIOS IMPRESOS O DIGITALES"
+                                                                    data-tokens="Option 19">
+                                                                    MEDIOS IMPRESOS O DIGITALES</option>
+                                                                <option value="IMPRESIÓN 3D" data-tokens="Option 20">
+                                                                    IMPRESIÓN 3D
+                                                                </option>
+                                                                <option value="CONSULTORÍA" data-tokens="Option 21">
+                                                                    CONSULTORÍA
+                                                                </option>
+                                                                <option value="PARQUE INDUSTRIAL"
+                                                                    data-tokens="Option 22">
+                                                                    PARQUE
+                                                                    INDUSTRIAL</option>
+                                                                <option value="SERVICIOS A LA AVIACIÓN"
+                                                                    data-tokens="Option 23">
+                                                                    SERVICIOS A LA AVIACIÓN</option>
+                                                                <option value="INVESTIGACIÓN" data-tokens="Option 24">
+                                                                    INVESTIGACIÓN
+                                                                </option>
+                                                                <option value="AEROLÍNEA" data-tokens="Option 25">
+                                                                    AEROLÍNEA
+                                                                </option>
+                                                                <option value="AVIACIÓN COMERCIAL"
+                                                                    data-tokens="Option 26">
+                                                                    AVIACIÓN
+                                                                    COMERCIAL</option>
+                                                                <option value="RECURSOS HUMANOS"
+                                                                    data-tokens="Option 27">
+                                                                    RECURSOS
+                                                                    HUMANOS</option>
+                                                                <option value="DISEÑO" data-tokens="Option 28">DISEÑO
+                                                                </option>
+                                                                <option value="PRUEBAS NO DESTRUCTIVAS"
+                                                                    data-tokens="Option 29">
+                                                                    PRUEBAS
+                                                                    NO DESTRUCTIVAS</option>
+                                                                <option value="MATERIALES COMPUESTOS"
+                                                                    data-tokens="Option 30">
+                                                                    MATERIALES
+                                                                    COMPUESTOS</option>
+                                                                <option value="PINTURAS" data-tokens="Option 31">
+                                                                    PINTURAS
+                                                                </option>
+                                                                <option value="MANUFACTURA" data-tokens="Option 32">
+                                                                    MANUFACTURA
+                                                                </option>
+                                                                <option value="OTRO">OTRO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-7">
+                                                        <!-- Campo de nombre de la empresa -->
+                                                        <div class="form-outline" id="grupo__otro"
+                                                            style="display: none;">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="otro" id="otro"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="3" />
+                                                            <label class="form-label"><b>Otro</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-12" id="divCargos">
+                                                        <!-- Campo de cargo -->
+                                                        <div class="coolinput">
+                                                            <label for="select" id="lblCargos"
+                                                                class="text"><b>Cargo</b></label>
+                                                            <select name="cargo" id="cargo"
+                                                                onchange="mostrarOtroCampo('cargo', 'grupo__otro2', 'divCargos', 'otro2', 'div2', 'lblCargos')">
+                                                                <option value="" selected disabled>Selecciona una opción
+                                                                </option>
+                                                                <option value="CEO" data-tokens="Option 1">CEO</option>
+                                                                <option value="GERENTE" data-tokens="Option 2">GERENTE
+                                                                </option>
+                                                                <option value="DIRECTOR" data-tokens="Option 3">DIRECTOR
+                                                                </option>
+                                                                <option value="ASISTENTE" data-tokens="Option 4">
+                                                                    ASISTENTE
+                                                                </option>
+                                                                <option value="JEFE DE DEPARTAMENTO"
+                                                                    data-tokens="Option 5">
+                                                                    JEFE DE
+                                                                    DEPARTAMENTO</option>
+                                                                <option value="JEFE DE AREA" data-tokens="Option 6">JEFE
+                                                                    DE
+                                                                    ÁREA
+                                                                </option>
+                                                                <option value="CONTRALOR" data-tokens="Option 7">
+                                                                    CONTRALOR
+                                                                </option>
+                                                                <option value="CONTADOR" data-tokens="Option 8">CONTADOR
+                                                                </option>
+                                                                <option value="EMBAJADOR" data-tokens="Option 9">
+                                                                    EMBAJADOR
+                                                                </option>
+                                                                <option value="AGREGADO MILITAR"
+                                                                    data-tokens="Option 10">
+                                                                    AGREGADO
+                                                                    MILITAR</option>
+                                                                <option value="ANALISTA DE MARKETING"
+                                                                    data-tokens="Option 11">
+                                                                    ANALISTA
+                                                                    DE MARKETING</option>
+                                                                <option value="ANALISTA DE PROYECTOS COMERCIALES"
+                                                                    data-tokens="Option 12">ANALISTA DE PROYECTOS
+                                                                    COMERCIALES
+                                                                </option>
+                                                                <option value="REPRESENTANTE LEGAL"
+                                                                    data-tokens="Option 13">
+                                                                    REPRESENTANTE LEGAL</option>
+                                                                <option value="ASESOR COMERCIAL"
+                                                                    data-tokens="Option 14">
+                                                                    ASESOR
+                                                                    COMERCIAL</option>
+                                                                <option value="ASESOR DE VENTAS"
+                                                                    data-tokens="Option 15">
+                                                                    ASESOR DE
+                                                                    VENTAS</option>
+                                                                <option value="ATC" data-tokens="Option 16">ATC</option>
+                                                                <option value="ASOCIADO" data-tokens="Option 17">
+                                                                    ASOCIADO
+                                                                </option>
+                                                                <option value="BUSINESS DEVELOPMENT DIRECTOR"
+                                                                    data-tokens="Option 18">
+                                                                    BUSINESS DEVELOPMENT DIRECTOR</option>
+                                                                <option value="PILOTO" data-tokens="Option 19">PILOTO
+                                                                </option>
+                                                                <option value="CONSULTOR" data-tokens="Option 20">
+                                                                    CONSULTOR
+                                                                </option>
+                                                                <option value="CONTRATISTA" data-tokens="Option 21">
+                                                                    CONTRATISTA
+                                                                </option>
+                                                                <option value="CONTADOR" data-tokens="Option 22">
+                                                                    COORDINADOR
+                                                                </option>
+                                                                <option value="JEFE DE OPERACIONES"
+                                                                    data-tokens="Option 23">
+                                                                    JEFE DE
+                                                                    OPERACIONES</option>
+                                                                <option value="JEFE DE MANTENIMIENTO"
+                                                                    data-tokens="Option 24">
+                                                                    JEFE
+                                                                    DE
+                                                                    MANTENIMIENTO</option>
+                                                                <option value="COORDIANDOR DE PROYECTOS"
+                                                                    data-tokens="Option 25">
+                                                                    COORDIANDOR DE PROYECTOS</option>
+                                                                <option value="DESARROLLO DE PRODUCTOS"
+                                                                    data-tokens="Option 26">
+                                                                    DESARROLLO DE PRODUCTOS</option>
+                                                                <option value="JEFE DE PLANTA" data-tokens="Option 27">
+                                                                    JEFE
+                                                                    DE
+                                                                    PLANTA
+                                                                </option>
+                                                                <option value="RECTOR" data-tokens="Option 28">RECTOR
+                                                                </option>
+                                                                <option value="SUBDIRECTOR" data-tokens="Option 29">
+                                                                    SUBDIRECTOR
+                                                                </option>
+                                                                <option value="VICEPRESIDENTE" data-tokens="Option 30">
+                                                                    VICEPRESIDENTE
+                                                                </option>
+                                                                <option value="MINISTRO JEFE DE CANCILLERIA"
+                                                                    data-tokens="Option 31">
+                                                                    MINISTRO JEFE DE CANCILLERÍA</option>
+                                                                <option value="MARKETING" data-tokens="Option 32">
+                                                                    MARKETING
+                                                                </option>
+                                                                <option value="SECRETARIO" data-tokens="Option 33">
+                                                                    SECRETARIO
+                                                                </option>
+                                                                <option value="SOCIO" data-tokens="Option 34">SOCIO
+                                                                </option>
+                                                                <option value="OTRO">OTRO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-7 mb-4">
+                                                        <!-- Campo de nombre de la empresa -->
+                                                        <div class="form-outline" id="grupo__otro2"
+                                                            style="display: none;">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="otro2" id="otro2"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="3" />
+                                                            <label class="form-label"><b>Otro</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Campo de direción -->
+                                                <div class="form-outline" id="grupo__direccion">
+                                                    <i class="fas trailing fa-lg"></i>
+                                                    <input type="text" name="direccion" id="direccion"
+                                                        class="form-control form-icon-trailing form-control-lg" />
+                                                    <label class="form-label"><b>Dirección</b></label>
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de país -->
+                                                        <div class="coolinput">
+                                                            <label for="input" class="text"><b>País</b></label>
+                                                            <select class="countrypicker" name="pais"
+                                                                id="pais"></select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de estado -->
+                                                        <div class="form-outline mt-4" id="grupo__estado">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="estado" id="estado"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="3" maxlength="75"
+                                                                pattern="^[a-zA-ZÀ-ÿñÑ\s]{3,75}$"
+                                                                oninput="this.value = this.value.replace(/[^a-zA-ZñÑÀ-ÿ\u00F1\s]/g, '')" />
+                                                            <label class="form-label"><b>Estado</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de ciudad -->
+                                                        <div class="form-outline mt-4" id="grupo__ciudad">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="ciudad" id="ciudad"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="1" maxlength="90"
+                                                                pattern="^[a-zA-ZÀ-ÿñÑ\s]{1,90}$"
+                                                                oninput="this.value = this.value.replace(/[^a-zA-ZñÑÀ-ÿ\u00F1\s]/g, '')" />
+                                                            <label class="form-label"><b>Ciudad</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de cp -->
+                                                        <div class="form-outline mt-4" id="grupo__cp">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="cp" id="cp"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="3" />
+                                                            <label class="form-label"><b>Código Postal</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Campo de teléfono -->
+                                                <div class="form-outline mt-4" style="display: none">
+                                                    <input type="text" name="lada" id="lada"
+                                                        class="form-control form-control-lg" />
+                                                </div>
+                                                <div class="input-group input-group-lg mt-4" id="grupo__telefono">
+                                                    <input type="text" name="telefono" id="telefono"
+                                                        class="form-control form-control-lg" placeholder="Teléfono"
+                                                        oninput="this.value = this.value.replace(/[a-zA-ZÀ-ÿñÑ\u00F1]/g, '')" />
+                                                    <i class="fas fa-lg pt-4 ps-3" style="display: none"></i>
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de teléfono oficina -->
+                                                        <div class="form-outline mt-4" id="grupo__telOfi">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="telOfi" id="telOfi"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                oninput="this.value = this.value.replace(/[a-zA-ZÀ-ÿñÑ\u00F1]/g, '')" />
+                                                            <label class="form-label"><b>Teléfono de Oficina</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <!-- Campo de teléfono móvil -->
+                                                        <div class="form-outline mt-4" id="grupo__telMov">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="telMov" id="telMov"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                oninput="this.value = this.value.replace(/[a-zA-ZÀ-ÿñÑ\u00F1]/g, '')" />
+                                                            <label class="form-label"><b>Teléfono Móvil</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- 2 columnas -->
+                                                <div class="row">
+
+                                                    <div class="col-md-12" id="divRubros">
+                                                        <!-- Campo de rubro -->
+                                                        <div class="coolinput">
+                                                            <label for="input" class="text"><b>Rubro</b></label>
+                                                            <select name="rubro" id="rubro"
+                                                                onchange="mostrarOtroCampo('rubro', 'grupo__otro3', 'divRubros', 'otro3')">
+                                                                <option value="" selected disabled>Selecciona una opción
+                                                                </option>
+                                                                <option value="O.E.Ms." data-tokens="Option 1">O.E.Ms.
+                                                                </option>
+                                                                <option value="TIER 1" data-tokens="Option 2">TIER 1
+                                                                </option>
+                                                                <option value="TIER 2" data-tokens="Option 3">TIER 2
+                                                                </option>
+                                                                <option value="TIER 3" data-tokens="Option 4">TIER 3
+                                                                </option>
+                                                                <option value="PROVEEDOR DE SERVICIOS"
+                                                                    data-tokens="Option 5">
+                                                                    PROVEEDOR
+                                                                    DE SERVICIOS</option>
+                                                                <option value="CONSULTORIA" data-tokens="Option 6">
+                                                                    CONSULTORÍA
+                                                                </option>
+                                                                <option value="DISEÑO" data-tokens="Option 7">DISEÑO
+                                                                </option>
+                                                                <option value="RECURSOS HUMANOS" data-tokens="Option 8">
+                                                                    RECURSOS
+                                                                    HUMANOS
+                                                                </option>
+                                                                <option value="PROVEEDOR LOCAL DE BAJO COSTO"
+                                                                    data-tokens="Option 9">
+                                                                    PROVEEDOR LOCAL DE BAJO COSTO</option>
+                                                                <option value="EDUCACIÓN" data-tokens="Option 10">
+                                                                    EDUCACIÓN
+                                                                </option>
+                                                                <option value="FUERZAS ARMADAS" data-tokens="Option 11">
+                                                                    FUERZAS
+                                                                    ARMADAS
+                                                                </option>
+                                                                <option value="GOBIERNO" data-tokens="Option 12">
+                                                                    GOBIERNO
+                                                                </option>
+                                                                <option value="ESPACIAL" data-tokens="Option 13">
+                                                                    ESPACIAL
+                                                                </option>
+                                                                <option value="PARQUE INDUSTRIAL"
+                                                                    data-tokens="Option 14">PARQUE
+                                                                    INDUSTRIAL</option>
+                                                                <option value="INDUSTRIA LATERAL"
+                                                                    data-tokens="Option 15">
+                                                                    INDUSTRIA
+                                                                    LATERAL</option>
+                                                                <option value="MATERIALES COMPUESTOS"
+                                                                    data-tokens="Option 16">
+                                                                    MATERIALES
+                                                                    COMPUESTOS</option>
+                                                                <option value="DEFENSA" data-tokens="Option 17">DEFENSA
+                                                                </option>
+                                                                <option value="MRO" data-tokens="Option 18">MRO</option>
+                                                                <option value="UAVs" data-tokens="Option 19">UAVs
+                                                                </option>
+                                                                <option value="COMBUSTIBLES Y LUBRICANTES"
+                                                                    data-tokens="Option 20">
+                                                                    COMBUSTIBLES Y LUBRICANTES</option>
+                                                                <option value="PINTURAS" data-tokens="Option 21">
+                                                                    PINTURAS
+                                                                </option>
+                                                                <option value="SERVICIOS A LA AVIACIÓN"
+                                                                    data-tokens="Option 22">
+                                                                    SERVICIOS A LA AVIACIÓN</option>
+                                                                <option value="AVIACIÓN COMERCIAL"
+                                                                    data-tokens="Option 23">
+                                                                    AVIACIÓN
+                                                                    COMERCIAL</option>
+                                                                <option value="PRUEBAS NO DESTRUCTIVAS"
+                                                                    data-tokens="Option 24">
+                                                                    PRUEBAS
+                                                                    NO DESTRUCTIVAS</option>
+                                                                <option value="MANUFACTURA" data-tokens="Option 25">
+                                                                    MANUFACTURA
+                                                                </option>
+                                                                <option value="LOGISTICA" data-tokens="Option 26">
+                                                                    LOGÍSTICA
+                                                                </option>
+                                                                <option value="INVESTIGACION" data-tokens="Option 27">
+                                                                    INVESTIGACIÓN
+                                                                </option>
+                                                                <option value="AEROLINEA" data-tokens="Option 28">
+                                                                    AEROLÍNEA
+                                                                </option>
+                                                                <option
+                                                                    value="INDUSTRIA QUE MIGRA AL SECTOR AERONAUTICO"
+                                                                    data-tokens="Option 29">INDUSTRIA QUE MIGRA AL
+                                                                    SECTOR
+                                                                    AERONÁUTICO
+                                                                </option>
+                                                                <option value="AVIACION PRIVADA"
+                                                                    data-tokens="Option 30">
+                                                                    AVIACIÓN
+                                                                    PRIVADA</option>
+                                                                <option value="IMPRESION 3D" data-tokens="Option 31">
+                                                                    IMPRESIÓN
+                                                                    3D
+                                                                </option>
+                                                                <option value="OTRO">OTRO</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-7">
+                                                        <!-- Campo de nombre de la empresa -->
+                                                        <div class="form-outline" id="grupo__otro3"
+                                                            style="display: none;">
+                                                            <i class="fas trailing fa-lg"></i>
+                                                            <input type="text" name="otro3" id="otro3"
+                                                                class="form-control form-icon-trailing form-control-lg"
+                                                                minlength="3" />
+                                                            <label class="form-label"><b>Otro</b></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón de registro -->
+                            <div class="d-flex justify-content-center">
+                                <button type="submit"
+                                    class="btn btn-block btn-lg text-white boton fw-bold">Registrarse</button>
+                            </div>
+
+                            <canvas id="qrCode" style="display: none;"></canvas>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="tokenModal" data-mdb-backdrop="static" data-mdb-keyboard="false"
+                                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header text-white fw-bold"
+                                            style="background-image: linear-gradient(135deg, #1981a7, #114d72, #00205B);">
+                                            <h5 class="modal-title" id="exampleModalLabel">Token seguridad</h5>
+                                        </div>
+                                        <div class="modal-body">Ingresa el token enviado a tu correo electrónico y da
+                                            clic
+                                            en <strong>Confirmar</strong> para continuar.
+                                            <div class="form-outline my-4" id="grupo__token">
+                                                <i class="fas trailing fa-lg"></i>
+                                                <input type="text" name="token" id="token"
+                                                    class="form-control form-icon-trailing form-control-lg"
+                                                    maxlength="6" required />
+                                                <label class="form-label"><b>Token</b></label>
+                                                <div class="invalid-feedback py-3">Token invalido</div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary fw-bold"
+                                                id="btn-reiniciar">Cancelar</button>
+                                            <button type="button" class="btn text-white boton fw-bold" id="conf"
+                                                disabled data-mdb-dismiss="modal">Confirmar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="liveAlertPlaceholder"></div>
+
+    <!-- Modal Paypal -->
+    <div class="modal fade" id="paypalModal" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header" style="background-image: linear-gradient(135deg, #1981a7, #114d72, #00205B);">
+                    <h5 class="modal-title text-white">PROCESO DE PAGO</h5>
+                    <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-center p-3">
+                        <div class="col-md-7 col-xl-5 mb-4 mb-md-0">
+                            <h4 class="text-success">$301.00</h4>
+                            <h4>Boleto FAMEX</h4>
+                            <p>
+                                Insurance claims and all necessary dependencies will be submitted to
+                                your
+                                insurer for the coverred portion of this order
+                            </p>
+                            <!-- Botones paypal -->
+                            <div id="paypal-button-container"></div>
+                        </div>
+
+                        <div class="col-md-5 col-xl-4 offset-xl-1">
+                            <div class="rounded d-flex flex-column p-2" style="background-color: #f8f9fa;">
+                                <div class="p-2 me-3">
+                                    <h4>Detalles de la orden</h4>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">Contracted Price</div>
+                                    <div class="ms-auto">$301.00</div>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">Amount toward deductible</div>
+                                    <div class="ms-auto">$0.00</div>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">Coinsurance( 0% )</div>
+                                    <div class="ms-auto">+ $0.00</div>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">Copayment</div>
+                                    <div class="ms-auto">+ $0.00</div>
+                                </div>
+                                <div class="border-top px-2 mx-2"></div>
+                                <div class="p-2 d-flex pt-3">
+                                    <div class="col-8">Total Deductible, Coinsurance, and Copay</div>
+                                    <div class="ms-auto">$0.00</div>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">
+                                        Maximum out-of-pocket on Insurance Policy (not reached)
+                                    </div>
+                                    <div class="ms-auto">$0.00</div>
+                                </div>
+                                <div class="border-top px-2 mx-2"></div>
+                                <div class="p-2 d-flex pt-3">
+                                    <div class="col-8">Insurance Responsibility</div>
+                                    <div class="ms-auto"><b>$0.00</b></div>
+                                </div>
+                                <div class="p-2 d-flex">
+                                    <div class="col-8">
+                                        Patient Balance <span class="fa fa-question-circle text-dark"></span>
+                                    </div>
+                                    <div class="ms-auto"><b>$0.00</b></div>
+                                </div>
+                                <div class="border-top px-2 mx-2"></div>
+                                <div class="p-2 d-flex pt-3">
+                                    <div class="col-8"><b>Total</b></div>
+                                    <div class="ms-auto"><b class="text-success">$301.00</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="libraries/jquery-3.7.0.min.js"></script>
+
+    <!-- Libreria Select2 -->
+    <script type="text/javascript" src="libraries/select2/js/select2.min.js"></script>
+    <!-- Libreria QRCode -->
+    <script type="text/javascript" src="libraries/qrcode.min.js"></script>
+
+    <!-- Paises -->
+    <script type="text/javascript" src="libraries/bootstrap-select-country/js/bootstrap-select-country.min.js"></script>
+    <!-- Lada telefonica -->
+    <script type="text/javascript" src="js/lada.js"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="mdb5/js/mdb.min.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/formulario.js"></script>
+    <script type="text/javascript" src="js/pdf.js"></script>
+</body>
+
+</html>

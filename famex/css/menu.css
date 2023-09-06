@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  transition: height 0.4s, background-color 0.3s;
+}
+
+/* Menu de hamburguesa */
+@media screen and (min-width: 768px) {
+  .header {
+    position: fixed;
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    /* background: linear-gradient(
+      to bottom,
+      rgba(67, 69, 71, 0.712),
+      rgba(37, 40, 42, 0.938),
+      rgba(22, 25, 28, 0.914)
+    ); */
+    background-color: #0c1427;
+    /* opacity: .2; */
+    background-image: url(img/barra_menu.jpg);
+    background-size: cover;
+  }
+
+  .navigation ul {
+    list-style: none;
+  }
+
+  .header .faltan {
+    float: left;
+    position: relative;
+    color: white;
+  }
+
+  .header .contador {
+    font-size: 12px;
+    float: left;
+    position: relative;
+    color: #09ffff;
+  }
+
+  .header .navigation ul li {
+    float: left;
+    position: relative;
+  }
+
+  .header .navigation ul li a {
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: all 0.2s ease;
+  }
+
+  .header .navigation ul li a:hover {
+    background-color: rgba(199, 199, 200, 0.7);
+  }
+
+  .header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgb(140, 140, 140, 0.733);
+    display: none;
+    border-radius: 5px;
+  }
+
+  .header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+
+  .header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+  }
+
+  .header .navigation ul li ul li {
+    width: 100%;
+  }
+
+  .header .navigation ul li:hover > ul {
+    display: initial;
+  }
+
+  #famex,
+  .header label {
+    display: none;
+    cursor: pointer;
+  }
+
+  /* Color de menu en barra de nevegacion de administradores */
+  .menuAdmin {
+    /* background: rgba(22, 25, 28, 0.914); */
+    background-color: rgb(0, 32, 91, .5);
+    background-image: url("../img/barra_menu.jpg");
+    background-size: cover;
+  }
+
+  .button-menu {
+    display: none;
+  }
+
+  .sub-menu {
+    right: 0;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    /* background: linear-gradient(
+      to bottom,
+      rgba(67, 69, 71, 0.712),
+      rgba(37, 40, 42, 0.938),
+      rgba(22, 25, 28, 0.914)
+    ); */
+    background-color: rgb(0, 32, 91, 1);
+  }
+
+  /* Ajusta la altura según sea necesario */
+  /* .main-nav ul {
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+    } */
+
+  .main-nav ul ul {
+    display: none;
+  }
+
+  .main-nav ul li:hover > ul {
+    display: block;
+  }
+
+  .main-nav ul ul {
+    margin-top: 0;
+    padding-left: 1rem;
+  }
+
+  .main-nav ul ul li {
+    margin-top: 0.5rem;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    z-index: 1000;
+    background-color: rgba(0, 32, 91, 0.7);
+  }
+
+  .header .faltan {
+    float: left;
+    font-size: 9px;
+    position: relative;
+    color: white;
+  }
+
+  .header .contador {
+    font-size: 12px;
+    float: left;
+    position: relative;
+    color: #09ffff;
+  }
+
+  .main-nav.show {
+    margin-left: 0;
+  }
+
+  .link-item1 {
+    margin-top: 5rem;
+  }
+
+  .link-item {
+    margin-left: 3rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: x-large;
+    font: bold;
+    overflow: visible;
+  }
+
+  .button-menu {
+    z-index: 2000;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    /* Pondrá un span debajo del otro*/
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* 
+    Dibujamos una línea recta por cada span creando el tipico menu hamburguesa
+  */
+
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.1s linear;
+  }
+
+  /* 
+    con los span dibujamos un icono de cerrar 
+    para mostrar cuándo la navegación este abierta 
+  */
+
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: rgb(206, 17, 38);
+  }
+
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+
+  /* Color de menu en barra de nevegacion de administradores */
+  .menuAdmin {
+    background: rgba(22, 25, 28, 0.914);
+  }
+
+  .title-conteiner{
+      font-size: 1.8rem;
+  }
+}
+
+/* Menu de Administrador */
+
+.menuAdmin {
+  position: fixed;
+  height: 40px;
+  top: 100px;
+  left: 0;
+  right: 0;
+  /* padding: 0 10%; */
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid white;
+  z-index: 100;
+}
+
+.navb ul {
+  list-style: none;
+}
+
+.navb li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navb li a:hover {
+  background-color: rgb(140, 140, 140, 0.733);
+}
+
+.navb li .cerrar:hover {
+  background-color: rgba(252, 0, 0, 0.733);
+}
+
+.navb .izq li a {
+  float: left;
+  padding: 7.5px 45px;
+}
+
+.navb .der li {
+  float: right;
+  color: white;
+}
+
+.navb .der li a {
+  float: right;
+  padding: 7.5px 10px;
+  font-size: x-large;
+}
+
+.navb .icon-home {
+  font-size: x-large;
+}
+
+.animation-left {
+  opacity: 0;
+  animation: showcontents-left 1s ease-in-out 0.6s 1 forwards;
+  background-color: transparent;
+}
+
+@keyframes showcontents-left {
+  from {
+    opacity: 0;
+    transform: translate(-200px, 0);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+
+.animation-rigth {
+  opacity: 0;
+  animation: showcontents-rigth 1s ease-in-out 0.6s 1 forwards;
+  background-color: transparent;
+}
+
+@keyframes showcontents-rigth {
+  from {
+    opacity: 0;
+    transform: translate(200px, 0);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+
+.animation-top {
+  opacity: 0;
+  animation: showcontents-top 1s ease-in-out 0.6s 1 forwards;
+  background-color: transparent;
+}
+
+@keyframes showcontents-top {
+  from {
+    opacity: 0;
+    transform: translate(0, 200px);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+
+.animation-zoom {
+    opacity: 0;
+    animation: zoom 1s ease-in-out 0.6s 1 forwards;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+a{
+  text-decoration: none !important;
+}
+
+/* Estilos para la alerta */
+.alerta {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.title-img{
+  display: flex;
+  background-image: url('../img/barra_titulo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 120px;
+  width: 100%;
+  justify-content: center;
+}
+
+.title-img-servicios{
+  display: flex;
+  background-image: url('../img/barra_titulo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width: 90%;
+  justify-content: center;
+}
+
+.title-conteiner {
+  max-width: 100%;
+  background-color: #9c9c9c; /* Color del título */
+  padding: 0px 10%;
+  font-weight: bold;
+  color: #071f30; /* Color del texto del título */
+  transform: skew(-40deg); /* Aplicamos la rotación al título */
+  display: inline-block; /* Asegura que el título se ajuste automáticamente al texto */
+  position: relative; /* Agregamos posición relativa para contener los paralelogramos */
+  margin: 20px auto;
+}
+
+.decoration-left,
+.decoration-rigth {
+  background-color: #071f2f;
+  height: 10px;
+  margin: 0;
+  width: 75%;
+  position: absolute; /* Posicionamos los paralelogramos */
+}
+.decoration-left {
+  top: -10px;
+  left: 0px;
+  transform: skew(0deg); /* Aplicamos la rotación al paralelogramo izquierdo */
+}
+
+.decoration-rigth {
+  bottom: -10px;
+  right: 0px;
+  transform: skew(-0deg); /* Aplicamos la rotación al paralelogramo derecho */
+}
+
+/* Estilos para el texto dentro del título */
+.title-conteiner span {
+  transform: skew(40deg); /* Aplicamos rotación inversa al texto */
+  display: inline-block; /* Asegura que el texto se ajuste automáticamente al paralelogramo */
+  padding: 5px 15px;
+}

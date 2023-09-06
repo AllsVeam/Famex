@@ -1,0 +1,164 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+table {
+    text-align: left;
+}
+
+
+
+.btn {
+    border: 1px solid  #105873;
+    background-color: white;
+    color:#105873 ; 
+}
+
+.btn:hover {
+    border: 1px solid white;
+    background:  linear-gradient(to bottom, #105873, #114d72);
+    color: white ;
+}
+
+@media only screen and (max-width: 767px) {
+    table {
+        overflow: auto;
+        width: 100%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    table {
+        width: 100%;
+        display: table;
+    }
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+table {
+    text-align: left;
+}
+
+
+
+.btn {
+    border: 1px solid  #105873;
+    background-color: white;
+    color:#105873 ; 
+}
+
+.btn:hover {
+    border: 1px solid white;
+    background:  linear-gradient(to bottom, #105873, #114d72);
+    color: white ;
+}
+
+@media only screen and (max-width: 767px) {
+    table {
+        overflow: auto;
+        width: 100%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    table {
+        width: 100%;
+        display: table;
+    }
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+table {
+    text-align: left;
+}
+
+
+
+.btn {
+    border: 1px solid  #105873;
+    background-color: white;
+    color:#105873 ; 
+}
+
+.btn:hover {
+    border: 1px solid white;
+    background:  linear-gradient(to bottom, #105873, #114d72);
+    color: white ;
+}
+
+@media only screen and (max-width: 767px) {
+    table {
+        overflow: auto;
+        width: 100%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    table {
+        width: 100%;
+        display: table;
+    }
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+table {
+    text-align: left;
+}
+
+
+
+.btn {
+    border: 1px solid  #105873;
+    background-color: white;
+    color:#105873 ; 
+}
+
+.btn:hover {
+    border: 1px solid white;
+    background:  linear-gradient(to bottom, #105873, #114d72);
+    color: white ;
+}
+
+@media only screen and (max-width: 767px) {
+    table {
+        overflow: auto;
+        width: 100%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    table {
+        width: 100%;
+        display: table;
+    }
+}

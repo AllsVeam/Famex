@@ -1,0 +1,22 @@
+<!-- <button onclick="mostrarAlerta()">Mostrar Alerta</button> -->
+<div id="miAlerta" class="alerta" tabindex="-1" role="dialog" style="z-index: 1100;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Encabezado del Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title text-success">¡Atención!</h5>
+            </div>
+
+            <!-- Cuerpo del Modal -->
+            <div class="modal-body fs-5">
+            <h5 id="texto" class="modal-title text-dark"></h5>
+                <!-- Aquí puedes agregar el contenido que desees mostrar en el modal -->
+            </div>
+
+            <!-- Pie del Modal -->
+            <div class="modal-footer fs-5">
+                <button class="btn btn-primary" data-dismiss="modal" onclick="cerrarAlerta()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

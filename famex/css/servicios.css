@@ -1,0 +1,379 @@
+.row .col-sm-5 {
+    height: 35rem;
+    position: relative;
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.card-servicio {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 2s;
+    perspective: 300px;
+    perspective-origin: center;
+    cursor: pointer;
+}
+
+.servicio-face,
+.servicio-back {
+    text-align: center;
+    background: white;
+    color: grey;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 2s;
+    padding: 0 10px;
+    justify-content: center;
+    border: 1px dashed rgb(171, 170, 170);
+    border-top: 10px solid rgba(4, 44, 97, 0.712);
+}
+
+.servicio-face {
+    margin: auto;
+    height: 100%;
+    font-size: 1.1rem;
+    flex-direction: column;
+    border-radius: 0 0px 50px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicio-back {
+    width: 80%;
+    background-color: white;
+    color: grey;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    border-radius: 0px 0px 50px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicio-back img {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.card-servicio:hover>.servicio {
+    transform: translateY(0px) translateX(0px) rotateY(-180deg);
+}
+
+.col-sm-6 a:hover,
+.btns-baner a:hover {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.btn-slider {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 12.5px;
+    text-decoration: none;
+    padding: 1em 3em;
+    border-radius: 6em;
+    transition: all .2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-slider::after {
+    background-color: #fff;
+}
+
+.btn-slider:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .row .col-sm-5{
+        padding: 0;
+    }
+
+    .btn-slider{
+        padding: 0.5rem 0.3rem;
+        margin: auto;
+    }
+    
+    .row .col-sm-5 {
+        height: 40rem;
+        position: relative;
+        background-color: white;
+        border: none;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    /* Aquí puedes agregar tus reglas de estilo específicas para dispositivos móviles */
+    .card-servicio {
+        margin: 5% 0%;
+    }
+
+    .servicio {
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+        align-items: center;
+    }
+
+    .title-ser {
+        font-size: 1.5rem;
+
+    }
+
+    .servicio-face, .servicio-back {
+        height: 90%;
+        margin: 0;
+    }
+
+
+}
+
+/* Estilos para computadoras */
+@media only screen and (min-width: 768px) {
+    .servicio {
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+
+}.row .col-sm-5 {
+    height: 35rem;
+    position: relative;
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.card-servicio {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 2s;
+    perspective: 300px;
+    perspective-origin: center;
+    cursor: pointer;
+}
+
+.servicio-face,
+.servicio-back {
+    text-align: center;
+    background: white;
+    color: grey;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 2s;
+    padding: 0 10px;
+    justify-content: center;
+    border: 1px dashed rgb(171, 170, 170);
+    border-top: 10px solid rgba(4, 44, 97, 0.712);
+}
+
+.servicio-face {
+    margin: auto;
+    height: 100%;
+    font-size: 1.1rem;
+    flex-direction: column;
+    border-radius: 0 0px 50px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicio-back {
+    width: 80%;
+    background-color: white;
+    color: grey;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    border-radius: 0px 0px 50px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicio-back img {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.card-servicio:hover>.servicio {
+    transform: translateY(0px) translateX(0px) rotateY(-180deg);
+}
+
+.col-sm-6 a:hover,
+.btns-baner a:hover {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.btn-slider {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 12.5px;
+    text-decoration: none;
+    padding: 1em 3em;
+    border-radius: 6em;
+    transition: all .2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-slider::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-slider::after {
+    background-color: #fff;
+}
+
+.btn-slider:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .row .col-sm-5{
+        padding: 0;
+    }
+
+    .btn-slider{
+        padding: 0.5rem 0.3rem;
+        margin: auto;
+    }
+    
+    .row .col-sm-5 {
+        height: 40rem;
+        position: relative;
+        background-color: white;
+        border: none;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    /* Aquí puedes agregar tus reglas de estilo específicas para dispositivos móviles */
+    .card-servicio {
+        margin: 5% 0%;
+    }
+
+    .servicio {
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+        align-items: center;
+    }
+
+    .title-ser {
+        font-size: 1.5rem;
+
+    }
+
+    .servicio-face, .servicio-back {
+        height: 90%;
+        margin: 0;
+    }
+
+
+}
+
+/* Estilos para computadoras */
+@media only screen and (min-width: 768px) {
+    .servicio {
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+
+}

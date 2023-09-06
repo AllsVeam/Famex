@@ -1,0 +1,138 @@
+footer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+footer .part1 {
+  /* background: linear-gradient(to bottom, rgb(67, 69, 71, 0.712), rgb( 37, 40, 42, 0.938), rgb( 22, 25, 28, 0.914)); */
+  /*background-color: rgb(0, 32, 91, 1);*/
+  background-image: url("../img/barra_pie.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+footer .part2 {
+  /* background-color: rgb( 12, 14, 16, 0.914); */
+  background-color: #0c1427;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.pie {
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.input-container-fot {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+  border: 1px solid #ccc;
+  border-radius: 50px; /* Radio de los bordes para que parezcan redondeados */
+
+  /* Ajustar el espaciado interno para que el contenido no esté demasiado pegado al borde */
+  padding: 5px 10px;
+  background-color: white;
+}
+
+/* Estilos para el input */
+.input-container-fot input {
+  flex: 1; /* El input ocupará todo el espacio disponible */
+  border: none;
+  outline: none;
+  border-radius: 50px; /* Bordes izquierdos del input */
+  padding: 5px 15px; /* Ajustar el espaciado interno para que el texto no esté demasiado pegado a los bordes */
+  background-color: white;
+}
+
+/* Estilos para el botón */
+.input-container-fot button {
+  border: none;
+  background-color: #0c1427;
+  color: #fff;
+  padding: 8px 10px; /* Ajustar el espaciado interno para que el texto del botón no esté demasiado pegado a los bordes */
+  border-radius: 50px; /* Bordes derechos del botón */
+  cursor: pointer;
+  
+}
+
+.input-container-fot button:hover {
+  background-color: white;
+  color: #0c1427;
+}
+
+.icon-large {
+  font-size: 35px;
+  margin: 5%;
+}
+
+.icon-small {
+  text-decoration: none;
+  display: inline-block;
+  color: #0c1427;
+  background-color: white;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+.icon-facebook:hover {
+  color: white;
+  background-color: rgb(59, 89, 152);
+}
+
+.icon-twitter:hover {
+  color: white;
+  background-color: rgb(0, 172, 238);
+}
+
+.icon-instagram:hover {
+  color: white;
+  background-color: rgb(131, 58, 180);
+}
+
+.icon-linkedin:hover {
+  color: white;
+  background-color: rgba(0, 0, 0);
+}
+
+.text-f:hover {
+  color: blue;
+}
+
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column; /* Cambiamos la dirección a columna en pantallas más pequeñas */
+    align-items: stretch; /* Ajustamos la alineación para que los elementos ocupen todo el ancho del contenedor */
+  }
+
+  .input-container input, .input-container button {
+    width: 80%; /* Los elementos ocuparán todo el ancho disponible en pantallas más pequeñas */
+    margin-bottom: 10px; /* Agregamos un margen inferior para separar el input y el botón */
+  }
+
+  .input-container-fot input {
+    width: 140px;
+    padding: none;
+  }
+}
+/*@media (max-width: 768px){
+    .input-container-fot {
+      padding: 0px;
+    }
+
+    .input-container-fot input {
+      padding: 0px;
+    }
+
+    .input-container-fot button {
+      padding: 0px;
+    }
+}*/
